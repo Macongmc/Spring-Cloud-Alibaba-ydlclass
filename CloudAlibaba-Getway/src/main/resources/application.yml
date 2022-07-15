@@ -1,0 +1,24 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: getway-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+          - id: nacos-conusmer   #路由 id,没有固定规则，但唯一，建议与服务名对应
+            # uri: http://localhost:8081/
+            #匹配后提供服务的路由地址
+            uri: http://localhost:9000
+            predicates:
+              #以下是断言条件，必选全部符合条件
+              - Path=/order/**
+
+

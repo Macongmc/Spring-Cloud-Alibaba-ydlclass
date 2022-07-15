@@ -1,0 +1,16 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: sentinel-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      web-context-unify: false #关闭收敛链路
+
+

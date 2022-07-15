@@ -1,0 +1,17 @@
+server:
+  port: 7777
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.226.129:5555 #nacos 服务注册中心地址
+      config:
+        server-addr: 192.168.226.129:5555 #nacos 服务配置中心地址
+        file-extension: yaml
+        #group: BJ_GROUP
+        #namespace: 975f335e-8e0b-4fdd-85b3-06d52cbd658e
+  application:
+    name: nacos-config-client
+
+#${prefix}-${spring.profiles.active}.${file-extension}
+#nacos-config-client-dev.yaml
